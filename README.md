@@ -27,7 +27,6 @@ You can use any of the following:
 | \confidential |
 | \secret       |
 | \topsecret    |
-| ------------- |
 
 Each one of these can also take an individual releasibility
 
