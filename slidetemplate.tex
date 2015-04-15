@@ -1,0 +1,176 @@
+\usetheme{Pittsburgh}
+\usecolortheme{dolphin}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\newcommand{\varlogo}{logo.jpg}
+\newcommand{\setlogo}[1]{
+    \renewcommand{\varlogo}{#1}
+}
+
+\newcommand{\slidetitle}[4]{
+    \setupslides
+        \usebackgroundtemplate {
+            \begin{minipage}{\paperwidth}
+            \hspace*{.025\paperwidth}
+            \begin{tikzpicture}
+            \node[opacity=.2] {
+                \includegraphics[width=.9\paperwidth,height=.9\paperheight]{\varlogo}
+            };
+            \end{tikzpicture}
+            \end{minipage}
+        }
+    \title{\bf #1}
+    \author{\bf #2}
+    \institute{\bf #3}
+    \date{\bf #4}
+    \frame{\titlepage}
+}
+
+\newenvironment{slide}[1]{
+    \usebackgroundtemplate {
+        \begin{minipage}{\paperwidth}
+        \hspace*{.1\paperwidth}
+        \includegraphics[width=.1\paperwidth,height=.1\paperheight]{\varlogo}
+        \begin{tikzpicture}
+        \node[opacity=0] {
+            \includegraphics[width=.1\paperwidth,height=.128\paperheight]{\varlogo}
+        };
+        \end{tikzpicture}
+        \hfill
+            \hspace*{.15\paperwidth}
+        \end{minipage}
+    }
+    \begin{frame}
+    \frametitle{#1}
+}{
+    \end{frame}
+}
+
+\newcommand{\classifyfooter}{\unclassified[//FOUO]}
+    \newcommand{\classification}[1]{
+        \renewcommand{\classifyfooter}{#1}
+    }
+
+\newcommand{\unclassified}[1][]{\color[rgb]{0,.6,0}{Unclassified#1}}
+\newcommand{\confidential}[1][]{\alert{CONFIDENTIAL#1}}
+\newcommand{\secret}[1][]{\alert{SECRET#1}}
+\newcommand{\topsecret}[1][]{\alert{TOP SECRET#1}}
+
+\newcommand{\slideprompt}[1]{
+    \usebackgroundtemplate {
+        \begin{minipage}{\paperwidth}
+        \hspace*{.025\paperwidth}
+        \begin{tikzpicture}
+        \node[opacity=.2] {
+            \includegraphics[width=.9\paperwidth,height=.9\paperheight]{\varlogo}
+        };
+        \end{tikzpicture}
+        \end{minipage}
+    }
+    \title{\Huge \bf #1}
+    \author{}
+    \date{}
+    \institute{}
+    \frame{\titlepage}
+}
+
+\newcommand{\slidetransition}[1]{
+    \usebackgroundtemplate {
+        \begin{minipage}{\paperwidth}
+        \hspace*{.1\paperwidth}
+        \includegraphics[width=.1\paperwidth,height=.1\paperheight]{\varlogo}
+        \begin{tikzpicture}
+        \node[opacity=0] {
+            \includegraphics[width=.1\paperwidth,height=.128\paperheight]{\varlogo}
+        };
+        \end{tikzpicture}
+        \hfill
+            \hspace*{.15\paperwidth}
+        \end{minipage}
+    }
+    \title{\Huge \bf #1}
+    \author{}
+    \date{}
+    \institute[]{}
+    \begin{frame}
+    \maketitle
+        \end{frame}
+}
+
+\newenvironment{pictureleft}[1]{%
+    \begin{columns}
+    \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{#1}
+    \column{.5\textwidth}
+}{
+    \end{columns}
+}
+
+\newcommand{\picturerightarg}{}
+\newenvironment{pictureright}[1]{%
+    \renewcommand{\picturerightarg}{#1}
+    \begin{columns}
+    \column{.5\textwidth}
+}{
+    \column{.5\textwidth}
+    \includegraphics[width=\textwidth]{\picturerightarg}
+    \end{columns}
+}
+
+\newcommand{\slidefullpicture}[1]{
+    \usebackgroundtemplate {
+    }
+    \begin{frame}
+    \begin{center}
+    \includegraphics[width=.85\textwidth]{#1}
+    \end{center}
+    \end{frame}
+}
+
+\newcommand{\slidepicture}[2]{
+    \usebackgroundtemplate {
+        \begin{minipage}{\paperwidth}
+        \hspace*{.1\paperwidth}
+        \includegraphics[width=.1\paperwidth,height=.1\paperheight]{\varlogo}
+        \begin{tikzpicture}
+        \node[opacity=0] {
+            \includegraphics[width=.1\paperwidth,height=.128\paperheight]{\varlogo}
+        };
+        \end{tikzpicture}
+
+        \hfill
+            \hspace*{.15\paperwidth}
+        \end{minipage}
+    }
+    \begin{frame}
+    \frametitle{#1}
+    \begin{center}
+    \includegraphics[width=.65\textwidth]{#2}
+    \end{center}
+    \end{frame}
+}
+
+\newcommand{\setupslides}{
+    \setbeamertemplate{navigation symbols}{}{}
+    \setbeamertemplate{footline}{%
+        \leavevmode%
+            \hbox{%
+                \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{framenumber}%
+                    \vspace{.2cm}
+                \usebeamerfont{framenumber}
+                \end{beamercolorbox}%
+                    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{framenumber}%
+                    \vspace{.2cm}
+                \usebeamerfont{framenumber}\classifyfooter
+                    \end{beamercolorbox}%
+                    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{framenumber}%
+                    \vspace{.2cm}
+                \usebeamerfont{framenumber}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+                \end{beamercolorbox}
+            }%
+        \vskip0pt%
+    }
+}
+

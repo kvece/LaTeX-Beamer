@@ -1,0 +1,83 @@
+\documentclass{beamer}
+
+% Make sure we include our template and set the logo
+\input{slidetemplate.tex}
+\setlogo{logo.jpg}
+
+\begin{document}
+
+% Set the default classification and then make a title
+\classification{}
+\slidetitle{My Title}{By Author}{LaTeX}{\today}
+
+\begin{slide}{Overview}
+    \begin{itemize}
+        \item This is a normal slide
+        \item The next slide demonstrates blocks
+        \item Time reveals
+        \item Slide prompt and changing classification
+        \item Slide transitions
+    \end{itemize}
+\end{slide}
+
+\begin{slide}{Using Blocks}
+    \begin{block}{Block 1}
+        \begin{itemize}
+            \item Block Item 1
+            \item Block Item 2
+        \end{itemize}
+    \end{block}
+    \begin{block}{Block 2}
+        \begin{itemize}
+            \item Block Item 1
+            \item Block Item 2
+        \end{itemize}
+    \end{block}
+\end{slide}
+
+
+\begin{slide}{Timed Reveals}
+    \begin{block}{One click}<1->
+        \begin{itemize}
+            \item<2->   Two click
+            \item<3-4>  This will hide next
+            \item<5>    Last item
+        \end{itemize}
+    \end{block}
+\end{slide}
+
+\classification{\unclassified[//For Github]}
+\slideprompt{Did you see the classification change?}
+
+\classification{}
+\slideprompt{Now do you see it's back?}
+
+\slidetransition{Pictures}
+
+\begin{slide}{Left side}
+    \begin{pictureleft}{logo.jpg}
+        \begin{itemize}
+            \item I can put point 1 here
+            \item And point 2
+        \end{itemize}
+    \end{pictureleft}
+\end{slide}
+
+\begin{slide}{Right side}
+    \begin{pictureright}{logo.jpg}
+        \begin{itemize}
+            \item I can put point 1 here
+            \item And point 2
+        \end{itemize}
+    \end{pictureright}
+\end{slide}
+
+\slideprompt{Next is a full picture}
+\slidefullpicture{logo.jpg}
+
+\slidepicture{This one has a title}{logo.jpg}
+
+\slideprompt{Questions?}
+
+\end{document}
+
