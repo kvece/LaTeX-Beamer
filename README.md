@@ -21,6 +21,7 @@ Set the classification for the following slides
 
 You can use any of the following:
 
+| Classifications |
 | ------------- |
 | \unclassified |
 | \confidential |
