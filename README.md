@@ -8,14 +8,25 @@ Look at example.tex for a demo of the functionality
 
 ### Commands
 
+_______
+
 `\setlogo{Picture.jpg}`
+
 Set the logo for all the slides
 
+_______
+
 `\slidetitle{Line 1}{Line 2}{Line 3}{Line 4}`
+
 Make the title slide
 
+_______
+
 `\classification{Value}`
+
 Set the classification for the following slides
+
+
 
 ##### Classification Values
 
@@ -32,23 +43,40 @@ Each one of these can also take an individual releasibility
 
 ###### Example
 `\unclassified[//FOUO]`
+
 Makes an Unclassified//FOUO tag for the slides
 
+_______
+
 `\slidetransition{Transition}`
+
 Use this slide to transition from one topic to another
 
+_______
+
 `\slideprompt{Prompt}`
+
 Use this slide to prompt the audience
 
+_______
+
 `\slidepicture{Title}{Picture.jpg}`
+
 Use this slide to make a picture with a title
 
+_______
+
 `\slidefullpicture{Picture.jpg}`
+
 Use this slide to make a full screen picture
 
 
 ### Environments
+
+_______
+
 `slide`
+
 Use this environment to start a new slide
 
 ###### Example
@@ -59,7 +87,10 @@ Use this environment to start a new slide
 \end{slide}
 ```
 
+_______
+
 `slidepictureleft`
+
 Use this environment to put a picture on the left of the slide
 
 ###### Example
@@ -76,7 +107,10 @@ Use this environment to put a picture on the left of the slide
 \end{slide}
 ```
 
+_______
+
 `slidepictureright`
+
 Use this environment to put a picture on the right of the slide
 
 ###### Example
